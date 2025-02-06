@@ -1,0 +1,108 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        body {
+            font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+            font-weight: 400;
+            background: #F5F5F5;
+            color: #a4e2f1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        header {
+            margin-bottom: 3rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.7;
+            font-weight: 300;
+        }
+
+        .projects {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            width: 90%;
+            max-width: 800px;
+        }
+
+        .project-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-decoration: none;
+            color: #ececec;
+            font-size: 1.5rem;
+            font-weight: 500;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-link::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: #fffcfc;
+            bottom: 0;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        .project-link:hover {
+            opacity: 0.8;
+            transform: scale(1.05) rotate(-1deg);
+        }
+
+        .project-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        @keyframes moveBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        body {
+            background: linear-gradient(-45deg, #d744a6, #183a5c, #7166d5, #f8f9fa);
+            background-size: 400% 400%;
+            animation: moveBackground 10s infinite linear;
+        }
+
+        body {
+            cursor: url('custom-cursor.png'), auto;
+        }
+        
+        
+        @media (min-width: 768px) {
+            .projects {
+                flex-direction: row;
+                justify-content: center;
+            }
+            
+        }
