@@ -3,23 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reggie Decossard – Javascript</title>
-    <link rel="stylesheet" href="https://use.typekit.net/soe0wum.css">
+    <title>Dynamic 3D Mood Background</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.typekit.net/soe0wum.css"> <!-- Include font -->
 </head>
 <body>
-    <header>
-        <h1>Reggie DeCossard</h1>
-        <p>Parsons School of Design Spring 2025</p>
-        <p>Course: Javascript</p>
-    </header>
-    <main>
-        <section class="projects">
-            <a href="#" class="project-link">Project 1: Interactive Design</a>
-            <a href="#" class="project-link">Project 2: Responsive Layout</a>
-            <a href="#" class="project-link">Project 3: Animation Effects</a>
-        </section>
-    </main>
+    <div id="controls">
+        <button onclick="setMoodBackground('happy'); playMusic('happy')">Happy</button>
+        <button onclick="setMoodBackground('sad'); playMusic('sad')">Sad</button>
+        <button onclick="setMoodBackground('calm'); playMusic('calm')">Calm</button>
+        <button onclick="setMoodBackground('energetic'); playMusic('energetic')">Energetic</button>
+    </div>
+
+    <!-- Audio elements for different moods -->
+    <audio id="happy-music" preload="auto">
+        <source src="LeBRON -  Poolsuite Fm Mix.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="sad-music" preload="auto">
+        <source src="Bruno Major - Nothing (Lyric  Chord Video).mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="calm-music" preload="auto">
+        <source src="Frank Ocean - Moon River.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="energetic-music" preload="auto">
+        <source src="Doechii - DENIAL IS A RIVER (Audio).mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
-<!--I used this website https://yuta-abe.com/ as inspo-->
