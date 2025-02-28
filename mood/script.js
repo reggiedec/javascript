@@ -1,4 +1,4 @@
-// Three.js variables
+
 let scene, camera, renderer, light, sphere, particles, particleMaterial;
 let mouseX = 0, mouseY = 0, scrollY = 0;
 
@@ -119,21 +119,16 @@ function adjustBackgroundOnScroll(scroll) {
     light.intensity = intensity;
     light.position.z = 10 + intensity * 10;
 }
-// Function to play or pause music based on button click
-function playMusic(mood) {
-    // Get the corresponding music element
-    const music = document.getElementById(mood + '-music');
 
-    // Check if the music is already playing
+function playMusic(mood) {  
+    const music = document.getElementById(mood + '-music');
     if (music.paused) {
-        // If paused, play the music
-        music.play();
+    music.play();
     } else {
-        // If playing, pause the music
         music.pause();
     }
 
-    // Stop any other music that might be playing (optional, if you want one at a time)
+    
     const allMusic = document.querySelectorAll('audio');
     allMusic.forEach(otherMusic => {
         if (otherMusic !== music) {
@@ -142,22 +137,20 @@ function playMusic(mood) {
     });
 }
 
-// Function to stop all music when double-clicked
+
 function stopAllMusic() {
     const allMusic = document.querySelectorAll('audio');
     allMusic.forEach(music => {
-        music.pause();  // Pause all audio elements
-        music.currentTime = 0;  // Optionally reset the audio to the beginning
+        music.pause();  
+        music.currentTime = 0;  
     });
 }
 
-// Function to change the background based on mood
 function setMoodBackground(mood) {
-    // Change the background or other settings based on the mood
     console.log('Mood:', mood);
 }
 
-// Add event listener for double-click to stop all music
+
 document.addEventListener('dblclick', stopAllMusic);
 
 
@@ -218,9 +211,9 @@ function setMoodBackground(mood) {
     const newPositions = new Float32Array(newParticleCount * 3);
 
     for (let i = 0; i < newParticleCount; i++) {
-        newPositions[i * 3] = Math.random() * 100 - 50; // X position
-        newPositions[i * 3 + 1] = Math.random() * 100 - 50; // Y position
-        newPositions[i * 3 + 2] = Math.random() * 100 - 50; // Z position
+        newPositions[i * 3] = Math.random() * 100 - 50; 
+        newPositions[i * 3 + 1] = Math.random() * 100 - 50; 
+        newPositions[i * 3 + 2] = Math.random() * 100 - 50; 
     }
 
     particleGeometry.setAttribute('position', new THREE.BufferAttribute(newPositions, 3));
@@ -228,5 +221,5 @@ function setMoodBackground(mood) {
 }
 
 
-// Initialize Three.js
+
 init();
